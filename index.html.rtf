@@ -1,0 +1,681 @@
+{\rtf1\ansi\ansicpg936\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 PingFangSC-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="zh-CN">\
+\
+<head>\
+  <meta charset="UTF-8">\
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+  <title>SCL-90
+\f1 \'d6\'a2\'d7\'b4\'d7\'d4\'c6\'c0\'c1\'bf\'b1\'ed
+\f0 </title>\
+  <style>\
+    * \{\
+      margin: 0;\
+      padding: 0;\
+      box-sizing: border-box;\
+      font-family: "Microsoft YaHei", sans-serif;\
+    \}\
+\
+    body \{\
+      background-color: #f5f7fa;\
+      color: #333;\
+      line-height: 1.6;\
+    \}\
+\
+    .container \{\
+      max-width: 800px;\
+      margin: 0 auto;\
+      padding: 20px;\
+    \}\
+\
+    .header \{\
+      text-align: center;\
+      margin-bottom: 30px;\
+      padding: 20px 0;\
+      background: #fff;\
+      border-radius: 10px;\
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);\
+    \}\
+\
+    .header h1 \{\
+      font-size: 24px;\
+      margin-bottom: 10px;\
+    \}\
+\
+    .header p \{\
+      font-size: 14px;\
+      color: #777;\
+    \}\
+\
+    .question-card \{\
+      background: #fff;\
+      border-radius: 10px;\
+      padding: 25px;\
+      margin-bottom: 20px;\
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);\
+    \}\
+\
+    .question \{\
+      margin-bottom: 20px;\
+      padding-bottom: 20px;\
+      border-bottom: 1px solid #f0f0f0;\
+    \}\
+\
+    .question-text \{\
+      font-size: 16px;\
+      margin-bottom: 12px;\
+    \}\
+\
+    .options \{\
+      display: flex;\
+      flex-wrap: wrap;\
+      gap: 10px;\
+    \}\
+\
+    .option \{\
+      flex: 1;\
+      min-width: 120px;\
+      padding: 10px;\
+      text-align: center;\
+      border: 1px solid #e2e8f0;\
+      border-radius: 6px;\
+      cursor: pointer;\
+      transition: all 0.3s;\
+    \}\
+\
+    .option:hover \{\
+      background: #f8f9fa;\
+    \}\
+\
+    .option.selected \{\
+      background: #4299e1;\
+      color: #fff;\
+      border-color: #4299e1;\
+    \}\
+\
+    .progress \{\
+      margin-bottom: 20px;\
+    \}\
+\
+    .progress-text \{\
+      font-size: 14px;\
+      color: #777;\
+      margin-bottom: 8px;\
+    \}\
+\
+    .progress-bar \{\
+      height: 8px;\
+      background: #e2e8f0;\
+      border-radius: 4px;\
+      overflow: hidden;\
+    \}\
+\
+    .progress-fill \{\
+      height: 100%;\
+      background: #48bb78;\
+      transition: width 0.5s;\
+      width: 0%;\
+    \}\
+\
+    .btn \{\
+      display: block;\
+      width: 100%;\
+      padding: 15px;\
+      background: #4299e1;\
+      color: #fff;\
+      border: none;\
+      border-radius: 6px;\
+      font-size: 16px;\
+      cursor: pointer;\
+      transition: background 0.3s;\
+      margin-top: 20px;\
+    \}\
+\
+    .btn:hover \{\
+      background: #3182ce;\
+    \}\
+\
+    .result \{\
+      display: none;\
+    \}\
+\
+    .result-title \{\
+      font-size: 20px;\
+      margin-bottom: 20px;\
+      text-align: center;\
+    \}\
+\
+    .score-details \{\
+      background: #f0f8fb;\
+      border-radius: 8px;\
+      padding: 20px;\
+      margin-bottom: 25px;\
+    \}\
+\
+    .score-item \{\
+      display: flex;\
+      justify-content: space-between;\
+      padding: 8px 0;\
+      border-bottom: 1px solid #e8f4f8;\
+    \}\
+\
+    .factor \{\
+      font-weight: 500;\
+    \}\
+\
+    .score \{\
+      color: #4299e1;\
+      font-weight: 600;\
+    \}\
+\
+    .interpretation \{\
+      line-height: 1.8;\
+      color: #4a5568;\
+    \}\
+\
+    .interpretation h3 \{\
+      margin: 15px 0 8px;\
+      font-size: 16px;\
+      color: #333;\
+    \}\
+\
+    .warning \{\
+      color: #e53e3e;\
+      font-weight: 500;\
+      margin-top: 10px;\
+      padding: 10px;\
+      background: #fef7fb;\
+      border-radius: 6px;\
+      border-left: 3px solid #e53e3e;\
+    \}\
+\
+    .share-buttons \{\
+      display: flex;\
+      gap: 10px;\
+      justify-content: center;\
+      margin-top: 20px;\
+    \}\
+\
+    .share-btn \{\
+      flex: 1;\
+      padding: 10px;\
+      background: #4299e1;\
+      color: #fff;\
+      border: none;\
+      border-radius: 6px;\
+      cursor: pointer;\
+      text-align: center;\
+      transition: background 0.3s;\
+    \}\
+\
+    .share-btn:hover \{\
+      background: #3182ce;\
+    \}\
+  </style>\
+</head>\
+\
+<body>\
+  <div class="container">\
+    <div class="header">\
+      <h1>SCL-90
+\f1 \'d6\'a2\'d7\'b4\'d7\'d4\'c6\'c0\'c1\'bf\'b1\'ed
+\f0 </h1>\
+      <p>
+\f1 \'b8\'c3\'c1\'bf\'b1\'ed\'b0\'fc\'ba\'ac
+\f0 90
+\f1 \'b8\'f6\'cf\'ee\'c4\'bf\'a3\'ac\'ba\'ad\'b8\'c7\'c7\'fb\'cc\'e5\'bb\'af\'a1\'a2\'c7\'bf\'c6\'c8\'d6\'a2\'d7\'b4\'a1\'a2\'c8\'cb\'bc\'ca\'b9\'d8\'cf\'b5\'c3\'f4\'b8\'d0\'b5\'c8
+\f0 9
+\f1 \'b8\'f6\'d2\'f2\'d7\'d3\'a3\'ac\'d3\'c3\'d3\'da\'c6\'c0\'b9\'c0\'bd\'fc\'c6\'da\'a3\'a8
+\f0 1
+\f1 \'d6\'dc\'c4\'da\'a3\'a9\'b5\'c4\'d0\'c4\'c0\'ed\'d7\'b4\'cc\'ac\'a1\'a3\'c7\'eb\'b8\'f9\'be\'dd\'ca\'b5\'bc\'ca\'b8\'d0\'ca\'dc\'d1\'a1\'d4\'f1\'b6\'d4\'d3\'a6\'d1\'a1\'cf\'ee\'a3\'ac\'ce\'de\'d0\'e8\'b9\'fd\'b6\'c8\'cb\'bc\'bf\'bc\'a1\'a3
+\f0 </p>\
+    </div>\
+\
+    <div class="progress">\
+      <div class="progress-text">
+\f1 \'bd\'f8\'b6\'c8\'a3\'ba
+\f0 <span id="progress-num">0</span>/90</div>\
+      <div class="progress-bar">\
+        <div class="progress-fill" id="progress-fill"></div>\
+      </div>\
+    </div>\
+\
+    <div class="question-card" id="assessment">\
+      <!-- 
+\f1 \'cc\'e2\'c4\'bf\'bd\'ab\'cd\'a8\'b9\'fd
+\f0 JS
+\f1 \'b6\'af\'cc\'ac\'c9\'fa\'b3\'c9
+\f0  -->\
+    </div>\
+\
+    <button class="btn" id="submit-btn" style="display: none;" onclick="calculateResult()">
+\f1 \'cc\'e1\'bd\'bb\'b2\'e2\'c6\'c0
+\f0 </button>\
+\
+    <div class="question-card result" id="result">\
+      <div class="result-title">SCL-90
+\f1 \'b2\'e2\'c6\'c0\'bd\'e1\'b9\'fb
+\f0 </div>\
+      <div class="score-details" id="score-details">\
+        <!-- 
+\f1 \'b7\'d6\'ca\'fd\'cf\'ea\'c7\'e9\'bd\'ab\'b6\'af\'cc\'ac\'c9\'fa\'b3\'c9
+\f0  -->\
+      </div>\
+      <div class="interpretation">\
+        <h3>
+\f1 \'bd\'e1\'b9\'fb\'bd\'e2\'b6\'c1
+\f0 </h3>\
+        <p>
+\f1 \'b1\'be\'b2\'e2\'c6\'c0\'b2\'c9\'d3\'c3
+\f0 1-5
+\f1 \'b7\'d6\'d6\'c6\'a3\'a8
+\f0 1=
+\f1 \'c3\'bb\'d3\'d0\'a3\'ac
+\f0 2=
+\f1 \'ba\'dc\'c7\'e1\'a3\'ac
+\f0 3=
+\f1 \'d6\'d0\'b5\'c8\'a3\'ac
+\f0 4=
+\f1 \'c6\'ab\'d6\'d8\'a3\'ac
+\f0 5=
+\f1 \'d1\'cf\'d6\'d8\'a3\'a9\'a3\'ac\'d7\'dc\'b7\'d6\'d4\'bd\'b8\'df\'cc\'e1\'ca\'be\'d0\'c4\'c0\'ed\'d6\'a2\'d7\'b4\'d4\'bd\'c3\'f7\'cf\'d4\'a3\'ba
+\f0 </p>\
+        <ul>\
+          <li>
+\f1 \'d7\'dc\'b7\'d6\'a3\'bc
+\f0 160
+\f1 \'b7\'d6\'a3\'ba\'d0\'c4\'c0\'ed\'d7\'b4\'cc\'ac\'bb\'f9\'b1\'be\'d5\'fd\'b3\'a3
+\f0 </li>\
+          <li>160
+\f1 \'b7\'d6
+\f0 \uc0\u8804 
+\f1 \'d7\'dc\'b7\'d6\'a3\'bc
+\f0 200
+\f1 \'b7\'d6\'a3\'ba\'bf\'c9\'c4\'dc\'b4\'e6\'d4\'da\'c7\'e1\'b6\'c8\'d0\'c4\'c0\'ed\'c0\'a7\'c8\'c5
+\f0 </li>\
+          <li>200
+\f1 \'b7\'d6
+\f0 \uc0\u8804 
+\f1 \'d7\'dc\'b7\'d6\'a3\'bc
+\f0 250
+\f1 \'b7\'d6\'a3\'ba\'bf\'c9\'c4\'dc\'b4\'e6\'d4\'da\'d6\'d0\'b6\'c8\'d0\'c4\'c0\'ed\'ce\'ca\'cc\'e2
+\f0 </li>\
+          <li>
+\f1 \'d7\'dc\'b7\'d6
+\f0 \uc0\u8805 250
+\f1 \'b7\'d6\'a3\'ba\'bf\'c9\'c4\'dc\'b4\'e6\'d4\'da\'bd\'cf\'d1\'cf\'d6\'d8\'b5\'c4\'d0\'c4\'c0\'ed\'ce\'ca\'cc\'e2
+\f0 </li>\
+        </ul>\
+        <h3>
+\f1 \'b8\'f7\'d2\'f2\'d7\'d3\'cb\'b5\'c3\'f7
+\f0 </h3>\
+        <p>\'95 
+\f1 \'c7\'fb\'cc\'e5\'bb\'af\'a3\'ba\'c9\'ed\'cc\'e5\'b2\'bb\'ca\'ca\'a3\'a8\'c8\'e7\'cd\'b7\'cd\'b4\'a1\'a2\'d0\'d8\'c3\'c6\'a1\'a2\'b7\'a6\'c1\'a6\'b5\'c8\'a3\'a9
+\f0 </p>\
+        <p>\'95 
+\f1 \'c7\'bf\'c6\'c8\'d6\'a2\'d7\'b4\'a3\'ba\'b7\'b4\'b8\'b4\'b3\'f6\'cf\'d6\'b5\'c4\'c7\'bf\'c6\'c8\'cb\'bc\'ce\'ac\'bb\'f2\'d0\'d0\'ce\'aa
+\f0 </p>\
+        <p>\'95 
+\f1 \'c8\'cb\'bc\'ca\'b9\'d8\'cf\'b5\'c3\'f4\'b8\'d0\'a3\'ba\'c9\'e7\'bd\'bb\'d6\'d0\'b8\'d0\'b5\'bd\'bd\'f4\'d5\'c5\'a1\'a2\'d7\'d4\'b1\'b0\'a1\'a2\'b2\'bb\'d7\'d4\'d4\'da
+\f0 </p>\
+        <p>\'95 
+\f1 \'d2\'d6\'d3\'f4\'a3\'ba\'c7\'e9\'d0\'f7\'b5\'cd\'c2\'e4\'a1\'a2\'d0\'cb\'c8\'a4\'bc\'f5\'cd\'cb\'a1\'a2\'d7\'d4\'d4\'f0\'b5\'c8
+\f0 </p>\
+        <p>\'95 
+\f1 \'bd\'b9\'c2\'c7\'a3\'ba\'bd\'f4\'d5\'c5\'a1\'a2\'b5\'a3\'d3\'c7\'a1\'a2\'d0\'c4\'bb\'c5\'a1\'a2\'b3\'f6\'ba\'b9\'b5\'c8
+\f0 </p>\
+        <p>\'95 
+\f1 \'b5\'d0\'b6\'d4\'a3\'ba\'d2\'d7\'bc\'a4\'c5\'ad\'a1\'a2\'b3\'e5\'b6\'af\'a1\'a2\'d3\'d0\'b9\'a5\'bb\'f7\'c7\'e3\'cf\'f2
+\f0 </p>\
+        <p>\'95 
+\f1 \'bf\'d6\'b2\'c0\'a3\'ba\'b6\'d4\'cc\'d8\'b6\'a8\'b3\'a1\'be\'b0\'bb\'f2\'ca\'c2\'ce\'ef\'b5\'c4\'bf\'d6\'be\'e5\'a3\'a8\'c8\'e7\'c9\'e7\'bd\'bb\'a1\'a2\'b8\'df\'b4\'a6\'b5\'c8\'a3\'a9
+\f0 </p>\
+        <p>\'95 
+\f1 \'c6\'ab\'d6\'b4\'a3\'ba\'b2\'c2\'d2\'c9\'a1\'a2\'b9\'cc\'d6\'b4\'a1\'a2\'c8\'cf\'ce\'aa\'cb\'fb\'c8\'cb\'d5\'eb\'b6\'d4\'d7\'d4\'bc\'ba
+\f0 </p>\
+        <p>\'95 
+\f1 \'be\'ab\'c9\'f1\'b2\'a1\'d0\'d4\'a3\'ba\'b3\'f6\'cf\'d6\'bb\'c3\'be\'f5\'a1\'a2\'cd\'fd\'cf\'eb\'a1\'a2\'cb\'bc\'ce\'ac\'bb\'ec\'c2\'d2\'b5\'c8
+\f0 </p>\
+        <p>\'95 
+\f1 \'c6\'e4\'cb\'fb\'a3\'ba\'cb\'af\'c3\'df\'a1\'a2\'d2\'fb\'ca\'b3\'b5\'c8\'b7\'bd\'c3\'e6\'b5\'c4\'ce\'ca\'cc\'e2
+\f0 </p>\
+        <div class="warning">\
+          
+\f1 \'cc\'e1\'ca\'be\'a3\'ba\'b1\'be\'b2\'e2\'c6\'c0\'bd\'f6\'ce\'aa\'d7\'d4\'ce\'d2\'c6\'c0\'b9\'c0\'b2\'ce\'bf\'bc\'a3\'ac\'b2\'bb\'c4\'dc\'cc\'e6\'b4\'fa\'d7\'a8\'d2\'b5\'d0\'c4\'c0\'ed\'d5\'ef\'b6\'cf\'a1\'a3\'c8\'f4\'b7\'d6\'ca\'fd\'bd\'cf\'b8\'df\'bb\'f2\'b8\'d0\'b5\'bd\'c3\'f7\'cf\'d4\'b2\'bb\'ca\'ca\'a3\'ac\'bd\'a8\'d2\'e9\'bc\'b0\'ca\'b1\'d1\'b0\'c7\'f3\'d0\'c4\'c0\'ed\'d7\'c9\'d1\'af\'ca\'a6\'bb\'f2\'be\'ab\'c9\'f1\'bf\'c6\'d2\'bd\'c9\'fa\'b5\'c4\'b0\'ef\'d6\'fa\'a1\'a3
+\f0 \
+        </div>\
+      </div>\
+      <div class="share-buttons">\
+        <button class="share-btn" onclick="shareWechat()">
+\f1 \'ce\'a2\'d0\'c5\'b7\'d6\'cf\'ed
+\f0 </button>\
+        <button class="share-btn" onclick="shareQQ()">QQ
+\f1 \'b7\'d6\'cf\'ed
+\f0 </button>\
+        <button class="share-btn" onclick="shareLink()">
+\f1 \'b8\'b4\'d6\'c6\'c1\'b4\'bd\'d3\'b7\'d6\'cf\'ed
+\f0 </button>\
+      </div>\
+    </div>\
+  </div>\
+\
+  <script>\
+    // SCL-90
+\f1 \'cc\'e2\'c4\'bf\'c1\'d0\'b1\'ed\'a3\'a8
+\f0 90
+\f1 \'cc\'e2\'a3\'a9
+\f0 \
+    const questions = [\
+      "
+\f1 \'cd\'b7\'cd\'b4
+\f0 ", "
+\f1 \'c9\'f1\'be\'ad\'b9\'fd\'c3\'f4\'a3\'ac\'d0\'c4\'d6\'d0\'b2\'bb\'cc\'a4\'ca\'b5
+\f0 ", "
+\f1 \'cd\'b7\'c4\'d4\'d6\'d0\'d3\'d0\'b2\'bb\'b1\'d8\'d2\'aa\'b5\'c4\'cf\'eb\'b7\'a8\'bb\'f2\'d7\'d6\'be\'e4\'c5\'cc\'d0\'fd
+\f0 ", "
+\f1 \'cd\'b7\'d4\'ce\'bb\'f2\'d4\'ce\'b5\'b9
+\f0 ", "
+\f1 \'b6\'d4\'d2\'ec\'d0\'d4\'b5\'c4\'d0\'cb\'c8\'a4\'bc\'f5\'cd\'cb
+\f0 ",\
+      "
+\f1 \'b6\'d4\'c5\'d4\'c8\'cb\'d4\'f0\'b1\'b8\'c7\'f3\'c8\'ab
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'b1\'f0\'c8\'cb\'c4\'dc\'bf\'d8\'d6\'c6\'c4\'fa\'b5\'c4\'cb\'bc\'cf\'eb
+\f0 ", "
+\f1 \'d4\'f0\'b9\'d6\'b1\'f0\'c8\'cb\'d6\'c6\'d4\'ec\'c2\'e9\'b7\'b3
+\f0 ", "
+\f1 \'cd\'fc\'bc\'c7\'d0\'d4\'b4\'f3
+\f0 ", "
+\f1 \'b5\'a3\'d0\'c4\'d7\'d4\'bc\'ba\'b5\'c4\'d2\'c2\'ca\'ce\'d5\'fb\'c6\'eb\'bc\'b0\'d2\'c7\'cc\'ac\'b5\'c4\'b6\'cb\'d5\'fd
+\f0 ",\
+      "
+\f1 \'c8\'dd\'d2\'d7\'b7\'b3\'c4\'d5\'ba\'cd\'bc\'a4\'b6\'af
+\f0 ", "
+\f1 \'d0\'d8\'cd\'b4
+\f0 ", "
+\f1 \'ba\'a6\'c5\'c2\'bf\'d5\'bf\'f5\'b5\'c4\'b3\'a1\'cb\'f9\'bb\'f2\'bd\'d6\'b5\'c0
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'d7\'d4\'bc\'ba\'b5\'c4\'be\'ab\'c1\'a6\'cf\'c2\'bd\'b5
+\f0 ", "
+\f1 \'cf\'eb\'bd\'e1\'ca\'f8\'d7\'d4\'bc\'ba\'b5\'c4\'c9\'fa\'c3\'fc
+\f0 ",\
+      "
+\f1 \'cc\'fd\'b5\'bd\'c5\'d4\'c8\'cb\'cc\'fd\'b2\'bb\'b5\'bd\'b5\'c4\'c9\'f9\'d2\'f4
+\f0 ", "
+\f1 \'b7\'a2\'b6\'b6
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'b4\'f3\'b6\'e0\'ca\'fd\'c8\'cb\'b6\'bc\'b2\'bb\'bf\'c9\'d0\'c5\'c8\'ce
+\f0 ", "
+\f1 \'ce\'b8\'bf\'da\'b2\'bb\'ba\'c3
+\f0 ", "
+\f1 \'c8\'dd\'d2\'d7\'bf\'de\'c6\'fc
+\f0 ",\
+      "
+\f1 \'cd\'ac\'d2\'ec\'d0\'d4\'cf\'e0\'b4\'a6\'ca\'b1\'b8\'d0\'b5\'bd\'ba\'a6\'d0\'df\'b2\'bb\'d7\'d4\'d4\'da
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'ca\'dc\'c6\'ad\'a3\'ac\'d6\'d0\'c1\'cb\'c8\'a6\'cc\'d7\'bb\'f2\'d3\'d0\'c8\'cb\'cf\'eb\'d7\'a5\'d7\'a1\'c4\'fa
+\f0 ", "
+\f1 \'ce\'de\'d4\'b5\'ce\'de\'b9\'ca\'b5\'d8\'cd\'bb\'c8\'bb\'b8\'d0\'b5\'bd\'ba\'a6\'c5\'c2
+\f0 ", "
+\f1 \'d7\'d4\'bc\'ba\'b2\'bb\'c4\'dc\'bf\'d8\'d6\'c6\'b5\'d8\'b4\'f3\'b7\'a2\'c6\'a2\'c6\'f8
+\f0 ", "
+\f1 \'c5\'c2\'b5\'a5\'b6\'c0\'b3\'f6\'c3\'c5
+\f0 ",\
+      "
+\f1 \'be\'ad\'b3\'a3\'d4\'f0\'b9\'d6\'d7\'d4\'bc\'ba
+\f0 ", "
+\f1 \'d1\'fc\'cd\'b4
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'c4\'d1\'d2\'d4\'cd\'ea\'b3\'c9\'c8\'ce\'ce\'f1
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'b9\'c2\'b6\'c0
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'bf\'e0\'c3\'c6
+\f0 ",\
+      "
+\f1 \'b9\'fd\'b7\'d6\'b5\'a3\'d3\'c7
+\f0 ", "
+\f1 \'b6\'d4\'ca\'c2\'ce\'ef\'b2\'bb\'b8\'d0\'d0\'cb\'c8\'a4
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'ba\'a6\'c5\'c2
+\f0 ", "
+\f1 \'c4\'fa\'b5\'c4\'b8\'d0\'c7\'e9\'c8\'dd\'d2\'d7\'ca\'dc\'b5\'bd\'c9\'cb\'ba\'a6
+\f0 ", "
+\f1 \'c5\'d4\'c8\'cb\'c4\'dc\'d6\'aa\'b5\'c0\'c4\'fa\'b5\'c4\'cb\'bd\'cf\'c2\'cf\'eb\'b7\'a8
+\f0 ",\
+      "
+\f1 \'b8\'d0\'b5\'bd\'b1\'f0\'c8\'cb\'b2\'bb\'c0\'ed\'bd\'e2\'c4\'fa\'a1\'a2\'b2\'bb\'cd\'ac\'c7\'e9\'c4\'fa
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'c8\'cb\'c3\'c7\'b6\'d4\'c4\'fa\'b2\'bb\'d3\'d1\'ba\'c3\'a3\'ac\'b2\'bb\'cf\'b2\'bb\'b6\'c4\'fa
+\f0 ", "
+\f1 \'d7\'f6\'ca\'c2\'b1\'d8\'d0\'eb\'d7\'f6\'b5\'c3\'ba\'dc\'c2\'fd\'d2\'d4\'b1\'a3\'d6\'a4\'d7\'f6\'b5\'c3\'d5\'fd\'c8\'b7
+\f0 ", "
+\f1 \'d0\'c4\'cc\'f8\'b5\'c3\'ba\'dc\'c0\'f7\'ba\'a6
+\f0 ", "
+\f1 \'b6\'f1\'d0\'c4\'bb\'f2\'ce\'b8\'b2\'bf\'b2\'bb\'ca\'e6\'b7\'fe
+\f0 ",\
+      "
+\f1 \'b8\'d0\'b5\'bd\'b1\'c8\'b2\'bb\'c9\'cf\'cb\'fb\'c8\'cb
+\f0 ", "
+\f1 \'bc\'a1\'c8\'e2\'cb\'e1\'cd\'b4
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'d3\'d0\'c8\'cb\'d4\'da\'bc\'e0\'ca\'d3\'c4\'fa\'a1\'a2\'cc\'b8\'c2\'db\'c4\'fa
+\f0 ", "
+\f1 \'c4\'d1\'d2\'d4\'c8\'eb\'cb\'af
+\f0 ", "
+\f1 \'d7\'f6\'ca\'c2\'b1\'d8\'d0\'eb\'b7\'b4\'b8\'b4\'bc\'ec\'b2\'e9
+\f0 ",\
+      "
+\f1 \'c4\'d1\'d2\'d4\'d7\'f6\'b3\'f6\'be\'f6\'b6\'a8
+\f0 ", "
+\f1 \'c5\'c2\'b3\'cb\'b5\'e7\'b3\'b5\'a1\'a2\'b9\'ab\'b9\'b2\'c6\'fb\'b3\'b5\'a1\'a2\'b5\'d8\'cc\'fa\'bb\'f2\'bb\'f0\'b3\'b5
+\f0 ", "
+\f1 \'ba\'f4\'ce\'fc\'d3\'d0\'c0\'a7\'c4\'d1
+\f0 ", "
+\f1 \'d2\'bb\'d5\'f3\'d5\'f3\'b7\'a2\'c0\'e4\'bb\'f2\'b7\'a2\'c8\'c8
+\f0 ", "
+\f1 \'d2\'f2\'ce\'aa\'b8\'d0\'b5\'bd\'ba\'a6\'c5\'c2\'b6\'f8\'b1\'dc\'bf\'aa\'c4\'b3\'d0\'a9\'b6\'ab\'ce\'f7\'a1\'a2\'b3\'a1\'ba\'cf\'bb\'f2\'bb\'ee\'b6\'af
+\f0 ",\
+      "
+\f1 \'c4\'d4\'d7\'d3\'b1\'e4\'bf\'d5\'c1\'cb
+\f0 ", "
+\f1 \'c9\'ed\'cc\'e5\'b7\'a2\'c2\'e9\'bb\'f2\'b4\'cc\'cd\'b4
+\f0 ", "
+\f1 \'ba\'ed\'c1\'fc\'d3\'d0\'b9\'a3\'c8\'fb\'b8\'d0
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'c7\'b0\'cd\'be\'c3\'bb\'d3\'d0\'cf\'a3\'cd\'fb
+\f0 ", "
+\f1 \'b2\'bb\'c4\'dc\'bc\'af\'d6\'d0\'d7\'a2\'d2\'e2\'c1\'a6
+\f0 ",\
+      "
+\f1 \'b8\'d0\'b5\'bd\'c9\'ed\'cc\'e5\'b5\'c4\'c4\'b3\'d2\'bb\'b2\'bf\'b7\'d6\'c8\'ed\'c8\'f5\'ce\'de\'c1\'a6
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'bd\'f4\'d5\'c5\'bb\'f2\'c8\'dd\'d2\'d7\'bd\'f4\'d5\'c5
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'ca\'d6\'bb\'f2\'bd\'c5\'b7\'a2\'d6\'d8
+\f0 ", "
+\f1 \'cf\'eb\'b5\'bd\'cb\'c0\'cd\'f6\'b5\'c4\'ca\'c2
+\f0 ", "
+\f1 \'b3\'d4\'b5\'c3\'cc\'ab\'b6\'e0
+\f0 ",\
+      "
+\f1 \'b5\'b1\'b1\'f0\'c8\'cb\'bf\'b4\'d7\'c5\'c4\'fa\'bb\'f2\'cc\'b8\'c2\'db\'c4\'fa\'ca\'b1\'b8\'d0\'b5\'bd\'b2\'bb\'d7\'d4\'d4\'da
+\f0 ", "
+\f1 \'d3\'d0\'d2\'bb\'d0\'a9\'b2\'bb\'ca\'f4\'d3\'da\'c4\'fa\'d7\'d4\'bc\'ba\'b5\'c4\'cf\'eb\'b7\'a8
+\f0 ", "
+\f1 \'d3\'d0\'cf\'eb\'b4\'f2\'c8\'cb\'bb\'f2\'c9\'cb\'ba\'a6\'cb\'fb\'c8\'cb\'b5\'c4\'b3\'e5\'b6\'af
+\f0 ", "
+\f1 \'d0\'d1\'b5\'c3\'cc\'ab\'d4\'e7
+\f0 ", "
+\f1 \'b1\'d8\'d0\'eb\'b7\'b4\'b8\'b4\'cf\'b4\'ca\'d6\'a1\'a2\'b5\'e3\'ca\'fd\'c4\'bf\'bb\'f2\'b4\'a5\'c3\'fe\'c4\'b3\'d0\'a9\'b6\'ab\'ce\'f7
+\f0 ",\
+      "
+\f1 \'cb\'af\'b5\'c3\'b2\'bb\'ce\'c8\'b2\'bb\'c9\'ee
+\f0 ", "
+\f1 \'d3\'d0\'cf\'eb\'cb\'a4\'bb\'b5\'bb\'f2\'c6\'c6\'bb\'b5\'b6\'ab\'ce\'f7\'b5\'c4\'b3\'e5\'b6\'af
+\f0 ", "
+\f1 \'d3\'d0\'d2\'bb\'d0\'a9\'b1\'f0\'c8\'cb\'c3\'bb\'d3\'d0\'b5\'c4\'cf\'eb\'b7\'a8\'bb\'f2\'c4\'ee\'cd\'b7
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'b6\'d4\'b1\'f0\'c8\'cb\'c9\'f1\'be\'ad\'b9\'fd\'c3\'f4
+\f0 ", "
+\f1 \'d4\'da\'c9\'cc\'b5\'ea\'bb\'f2\'b5\'e7\'d3\'b0\'d4\'ba\'b5\'c8\'c8\'cb\'b6\'e0\'b5\'c4\'b5\'d8\'b7\'bd\'b8\'d0\'b5\'bd\'b2\'bb\'d7\'d4\'d4\'da
+\f0 ",\
+      "
+\f1 \'b8\'d0\'b5\'bd\'c8\'ce\'ba\'ce\'ca\'c2\'c7\'e9\'b6\'bc\'ba\'dc\'c0\'a7\'c4\'d1
+\f0 ", "
+\f1 \'d2\'bb\'d5\'f3\'d5\'f3\'bf\'d6\'be\'e5\'bb\'f2\'be\'aa\'bf\'d6
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'d4\'da\'b9\'ab\'b9\'b2\'b3\'a1\'ba\'cf\'b3\'d4\'b6\'ab\'ce\'f7\'ba\'dc\'b2\'bb\'ca\'e6\'b7\'fe
+\f0 ", "
+\f1 \'be\'ad\'b3\'a3\'d3\'eb\'c8\'cb\'d5\'f9\'c2\'db
+\f0 ", "
+\f1 \'b5\'a5\'b6\'c0\'d2\'bb\'c8\'cb\'ca\'b1\'c9\'f1\'be\'ad\'ba\'dc\'bd\'f4\'d5\'c5
+\f0 ",\
+      "
+\f1 \'b1\'f0\'c8\'cb\'b6\'d4\'c4\'fa\'b5\'c4\'b3\'c9\'bc\'a8\'c3\'bb\'d3\'d0\'d7\'f6\'b3\'f6\'c7\'a1\'b5\'b1\'b5\'c4\'c6\'c0\'bc\'db
+\f0 ", "
+\f1 \'bc\'b4\'ca\'b9\'ba\'cd\'b1\'f0\'c8\'cb\'d4\'da\'d2\'bb\'c6\'f0\'d2\'b2\'b8\'d0\'b5\'bd\'b9\'c2\'b5\'a5
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'d7\'f8\'c1\'a2\'b2\'bb\'b0\'b2\'a1\'a2\'d0\'c4\'c9\'f1\'b2\'bb\'b6\'a8
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'d7\'d4\'bc\'ba\'c3\'bb\'d3\'d0\'ca\'b2\'c3\'b4\'bc\'db\'d6\'b5
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'ca\'ec\'cf\'a4\'b5\'c4\'b6\'ab\'ce\'f7\'b1\'e4\'b3\'c9\'c4\'b0\'c9\'fa\'bb\'f2\'b2\'bb\'cf\'f1\'ca\'c7\'d5\'e6\'b5\'c4
+\f0 ",\
+      "
+\f1 \'b4\'f3\'bd\'d0\'bb\'f2\'cb\'a4\'b6\'ab\'ce\'f7
+\f0 ", "
+\f1 \'ba\'a6\'c5\'c2\'bb\'e1\'d4\'da\'b9\'ab\'b9\'b2\'b3\'a1\'ba\'cf\'d4\'ce\'b5\'b9
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'b1\'f0\'c8\'cb\'cf\'eb\'d5\'bc\'c4\'fa\'b5\'c4\'b1\'e3\'d2\'cb
+\f0 ", "
+\f1 \'ce\'aa\'d2\'bb\'d0\'a9\'d3\'d0\'b9\'d8
+\f0 \'93
+\f1 \'d0\'d4
+\f0 \'94
+\f1 \'b5\'c4\'cf\'eb\'b7\'a8\'b6\'f8\'ba\'dc\'bf\'e0\'c4\'d5
+\f0 ", "
+\f1 \'c4\'fa\'c8\'cf\'ce\'aa\'d3\'a6\'b8\'c3\'d2\'f2\'ce\'aa\'d7\'d4\'bc\'ba\'b5\'c4\'b9\'fd\'b4\'ed\'b6\'f8\'ca\'dc\'b5\'bd\'b3\'cd\'b7\'a3
+\f0 ",\
+      "
+\f1 \'b8\'d0\'b5\'bd\'d2\'aa\'ba\'dc\'bf\'ec\'b0\'d1\'ca\'c2\'c7\'e9\'d7\'f6\'cd\'ea
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'d7\'d4\'bc\'ba\'b5\'c4\'c9\'ed\'cc\'e5\'d3\'d0\'d1\'cf\'d6\'d8\'ce\'ca\'cc\'e2
+\f0 ", "
+\f1 \'b4\'d3\'ce\'b4\'b8\'d0\'b5\'bd\'ba\'cd\'c6\'e4\'cb\'fb\'c8\'cb\'ba\'dc\'c7\'d7\'bd\'fc
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'d7\'d4\'bc\'ba\'d3\'d0\'d7\'ef
+\f0 ", "
+\f1 \'b8\'d0\'b5\'bd\'d7\'d4\'bc\'ba\'b5\'c4\'c4\'d4\'d7\'d3\'d3\'d0\'c3\'ab\'b2\'a1
+\f0 "\
+    ];\
+\
+    // 9
+\f1 \'b8\'f6\'d2\'f2\'d7\'d3\'b6\'d4\'d3\'a6\'b5\'c4\'cc\'e2\'c4\'bf\'cb\'f7\'d2\'fd\'a3\'a8\'b4\'d3
+\f0 0
+\f1 \'bf\'aa\'ca\'bc\'a3\'a9
+\f0 \
+    const factors = \{\
+      
+\f1 \'c7\'fb\'cc\'e5\'bb\'af
+\f0 : [0, 1, 4, 12, 27, 40, 42, 48, 49, 52, 53, 56, 58],\
+      
+\f1 \'c7\'bf\'c6\'c8\'d6\'a2\'d7\'b4
+\f0 : [2, 9, 10, 28, 38, 45, 46, 51, 55, 65],\
+      
+\f1 \'c8\'cb\'bc\'ca\'b9\'d8\'cf\'b5\'c3\'f4\'b8\'d0
+\f0 : [6, 21, 34, 36, 37, 41, 61, 69, 73],\
+      
+\f1 \'d2\'d6\'d3\'f4
+\f0 : [3, 5, 14, 15, 20, 22, 26, 29, 30, 31, 32, 54, 71, 79],\
+      
+\f1 \'bd\'b9\'c2\'c7
+\f0 : [7, 17, 23, 33, 39, 57, 72, 78, 80, 86],\
+      
+\f1 \'b5\'d0\'b6\'d4
+\f0 : [11, 24, 63, 67, 74, 81],\
+      
+\f1 \'bf\'d6\'b2\'c0
+\f0 : [13, 25, 47, 50, 70, 82, 87],\
+      
+\f1 \'c6\'ab\'d6\'b4
+\f0 : [16, 35, 62, 75, 83, 88],\
+      
+\f1 \'be\'ab\'c9\'f1\'b2\'a1\'d0\'d4
+\f0 : [8, 18, 43, 64, 66, 84, 85],\
+      
+\f1 \'c6\'e4\'cb\'fb
+\f0 : [19, 44, 59, 60, 68, 76, 77]\
+    \};\
+\
+    let answers = new Array(90).fill(null); // 
+\f1 \'b4\'e6\'b4\'a2\'b4\'f0\'b0\'b8\'a3\'a8
+\f0 1-5
+\f1 \'b7\'d6\'a3\'a9
+\f0 \
+    let currentQuestionIndex = 0; // 
+\f1 \'b5\'b1\'c7\'b0\'cc\'e2\'c4\'bf\'cb\'f7\'d2\'fd
+\f0 \
+    const assessmentContainer = document.getElementById('assessment');\
+    const progressNum = document.getElementById('progress-num');\
+    const progressFill = document.getElementById('progress-fill');\
+    const resultDiv = document.getElementById('result');\
+    const scoreDetails = document.getElementById('score-details');\
+    const submitBtn = document.getElementById('submit-btn');\
+\
+    // 
+\f1 \'b3\'f5\'ca\'bc\'bb\'af\'b2\'e2\'c6\'c0\'a3\'ba\'e4\'d6\'c8\'be\'b5\'da\'d2\'bb\'cc\'e2\'a1\'a2\'b8\'fc\'d0\'c2\'bd\'f8\'b6\'c8
+\f0 \
+    function initAssessment() \{\
+      renderCurrentQuestion();\
+      updateProgress();\
+    \}\
+\
+    // 
+\f1 \'e4\'d6\'c8\'be\'b5\'b1\'c7\'b0\'cc\'e2\'c4\'bf\'a3\'a8\'b0\'fc\'c0\'a8\'d1\'a1\'cf\'ee\'a1\'a2\'d2\'d1\'d1\'a1\'bb\'d8\'cf\'d4\'a3\'a9
+\f0 \
+    function renderCurrentQuestion() \{\
+      const question = questions[currentQuestionIndex];\
+      assessmentContainer.innerHTML = `\
+        <div class="question">\
+          <div class="question-text">$\{currentQuestionIndex + 1\}. $\{question\}</div>\
+          <div class="options">\
+            <div class="option" onclick="selectOption(1)">1. 
+\f1 \'c3\'bb\'d3\'d0
+\f0 </div>\
+            <div class="option" onclick="selectOption(2)">2. 
+\f1 \'ba\'dc\'c7\'e1
+\f0 </div>\
+            <div class="option" onclick="selectOption(3)">3. 
+\f1 \'d6\'d0\'b5\'c8
+\f0 </div>\
+            <div class="option" onclick="selectOption(4)">4. 
+\f1 \'c6\'ab\'d6\'d8
+\f0 </div>\
+            <div class="option" onclick="selectOption(5)">5. 
+\f1 \'d1\'cf\'d6\'d8
+\f0 </div>\
+          </div>\
+        </div>\
+      `;\
+\
+      // 
+\f1 \'c8\'e7\'b9\'fb\'d6\'ae\'c7\'b0\'b4\'f0\'b9\'fd\'d5\'e2\'cc\'e2\'a3\'ac\'b0\'d1\'d1\'a1\'d6\'d0\'b5\'c4\'d1\'f9\'ca\'bd\'bc\'d3\'c9\'cf
+\f0 \
+      if (answers[currentQuestionIndex]!== null) \{\
+        const options = assessmentContainer.querySelectorAll('.option');\
+        options[answers[currentQuestionIndex] - 1].classList.add('selected');\
+      \}\
+\
+      // 
+\f1 \'cf\'d4\'ca\'be\'c9\'cf\'cf\'c2\'cc\'e2
+\f0 /
+\f1 \'cc\'e1\'bd\'bb\'b0\'b4\'c5\'a5\'a3\'ba
+\f0 \
+      //}
